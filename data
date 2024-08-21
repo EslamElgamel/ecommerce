@@ -1,0 +1,61 @@
+// in the cmd : cd /d D:\indexAcademy => to momve to this directory
+// command "code ." => to open this directory in visual studio code 
+
+// npm i -D nodemon => to install in the dev dependencies USE IN DEV ONLY
+
+// i'm now can connect to database easily with atles and compass 
+
+// {
+//     id:"2343",
+//     name:"eslam"
+// }
+
+// name in sql = column  , collection = table
+
+
+schema => modle
+
+slug =>  a and b --->  shoping.com/a-and-b
+
+timestamps =>  for last prouducts
+
+express-async-handler  ==> handle error without then- catch or try-catch
+
+Pagingation >   http://localhost:8000/api/v1/categories?page=1&limit=2  >>> default settings in the code > category.service.js > get category
+
+new: true in update method to return document after update 
+
+when you write a application >>>> devolpment mode 
+push code and there someone work with you  >>>> stage mode
+push code and everyone can use >>>>> production mode
+
+dry --> do'nt repeat your self
+
+ctrl + s ==>  prittier
+in model scehma minlength-> string    min -> numbers
+
+// 1- DiskStorage engine
+// const multerStorage = multer.diskStorage({
+//     destination: function (req ,file ,cb){
+//         cb(null, 'uploads/categories')
+//     },
+//     filename: function (req ,file ,cb){
+//         const ext = file.mimetype.split("/")[1];
+//         const filename = `category-${uuidv4()}-${Date.now()}.${ext}`;
+//         cb(null , filename)
+//     },
+
+// })
+
+// 2- Memory storage engine
+
+// const multerStorage = multer.memoryStorage();
+
+// const multerFilter = function (req, file ,cb){
+//     if(file.mimetype.startsWith('image')){
+//         cb(null , true)
+//     }else {
+//         cb(new ApiError('only images allowed',400 ), false)
+//     }
+// }
+// const upload = multer({storage: multerStorage, fileFilter: multerFilter})
