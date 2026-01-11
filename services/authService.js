@@ -6,6 +6,8 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const sendEmail = require("../utils/sendEmail");
 const createToken = require("../utils/createToken") 
+const {sanitizeUser} = require("../utils/sanitizeData")
+
 
 const User = require("../models/userModel");
 
@@ -37,8 +39,9 @@ exports.login = asyncHandler(async (req, res, next) => {
     return next(new ApiError("Incorrect email or password", 401));
 
   const token = createToken(user._id);
+  delete user._doc.password
 
-  res.status(200).json({ data: user, token });
+  res.status(200).json({ data: sanitizeUser(user), token });
 });
 
 // @desc make sure that user is authenticated
